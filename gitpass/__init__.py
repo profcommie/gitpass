@@ -78,6 +78,7 @@ def save_password(passfile, password):
     Creates/overwrites a file 'passfile' to contain contents
     'password'
     """
+    password = password.encode("utf-8")
     with open(passfile, 'w') as f:
         f.write("%s\n" % (base64.b64encode(password),))
 
